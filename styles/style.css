@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@keyframes coinMovement{
+    0%{top:0px;}
+    50%{top:30px;}
+    100%{top:0px;}
+}
+
+body{
+    height: 100vh;
+    background-color: #1704BA;
+    font-family: sans-serif;
+}
+
+.wrapper{
+    display: grid;
+    height: 100%;
+    /* border: 1px solid red; */
+}
+
+.container{
+    height: 100%;
+    /* border: 1px solid yellow; */
+}
+
+.wrapper__draw-container{
+    /* border: 1px solid red; */
+    order: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.draw-container__img{
+    /* transform: rotateZ(90deg); */
+    /* border: 1px solid red; */
+    border-radius: 45%;
+    /* border: 1px solid black; */
+}
+
+.draw-container__img img{
+    width: 15rem;
+    position: relative;
+    animation: coinMovement 4s linear 0s infinite;
+    /* box-shadow: 0px 200px 22px rgba(0, 0, 0, 0.2); */
+    border-radius: inherit;
+}
+
+.wrapper__exch-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#form{
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background: rgba(225, 225,225, 0.1);
+    backdrop-filter: blur(20px);
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 768px){
+    .wrapper{
+        grid-template-columns: repeat(2, 1fr);
+    } .wrapper__draw-container{
+        order: 0;
+    }
+}
