@@ -17,17 +17,17 @@
 }
 
 body {
-  height: 100vh;
-  /* background-color: #1704ba; */
+  height: 100%;
   background: linear-gradient(
-    90deg,
+    120deg,
     rgba(0, 212, 255, 1) 0%,
     rgba(9, 9, 121, 1) 49%,
     rgba(2, 0, 36, 1) 100%
   );
-  /* background: url(../assets/fakurian-design-nY14Fs8pxT8-unsplash.jpg) no-repeat; */
+  background-repeat: no-repeat;
   background-size: cover;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
+ font-family: 'Roboto', sans-serif;
 }
 
 .wrapper {
@@ -68,9 +68,8 @@ body {
 
 #form {
   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  background: rgba(225, 225, 225, 0.1);
-  backdrop-filter: blur(15px);
+  border-radius: 30px;
+  background-color: #111;
   overflow: hidden;
   background-size: cover;
   color: #fff;
@@ -81,13 +80,13 @@ body {
   flex-direction: column;
   position: relative;
   z-index: 5;
-  border: 1px solid linear-gradient(to right, #5614b0, #dbd65c);
 }
 
 #form h1 {
   margin-bottom: 1.5em;
   line-height: 50px;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #E4AF18;
+  letter-spacing: .3px;
 }
 
 .options-container {
@@ -113,12 +112,15 @@ body {
   height: 3rem;
   border-radius: 5px;
   border: none;
-  color: #fff;
-  background-color: #000;
+  /* color: #fff; */
+  background-color: #E4AF18;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
 }
 
 @media screen and (min-width: 768px) {
+  body{
+    height: 100vh;
+  }
   .wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -130,11 +132,11 @@ body {
     display: inline-block;
     width: 10em;
     height: 5em;
-    box-shadow: 0px 100px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 100px 30px rgba(0, 0, 0, 0.4);
     border-radius: 50%;
     position: absolute;
     right: 15%;
-    top: 90%;
+    top: 80%;
   }
   .form__select {
     display: flex;
