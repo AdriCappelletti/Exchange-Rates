@@ -1,78 +1,145 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@keyframes coinMovement{
-    0%{top:0px;}
-    50%{top:30px;}
-    100%{top:0px;}
+@keyframes coinMovement {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 30px;
+  }
+  100% {
+    top: 0px;
+  }
 }
 
-body{
-    height: 100vh;
-    background-color: #1704BA;
-    font-family: sans-serif;
+body {
+  height: 100vh;
+  /* background-color: #1704ba; */
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(9, 9, 121, 1) 49%,
+    rgba(2, 0, 36, 1) 100%
+  );
+  /* background: url(../assets/fakurian-design-nY14Fs8pxT8-unsplash.jpg) no-repeat; */
+  background-size: cover;
+  font-family: sans-serif;
 }
 
-.wrapper{
-    display: grid;
-    height: 100%;
-    /* border: 1px solid red; */
+.wrapper {
+  display: grid;
+  height: 100%;
 }
 
-.container{
-    height: 100%;
-    /* border: 1px solid yellow; */
+.container {
+  height: 100%;
 }
 
-.wrapper__draw-container{
-    /* border: 1px solid red; */
-    order: -1;
+.wrapper__draw-container {
+  order: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.draw-container__img {
+  position: relative;
+}
+
+.draw-container__img img {
+  width: 15rem;
+  position: relative;
+  animation: coinMovement 4s linear 0s infinite;
+  border-radius: inherit;
+}
+
+.wrapper__exch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:1em;
+  z-index: 1;
+  position: relative;
+}
+
+#form {
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  background: rgba(225, 225, 225, 0.1);
+  backdrop-filter: blur(15px);
+  overflow: hidden;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 5;
+  border: 1px solid linear-gradient(to right, #5614b0, #dbd65c);
+}
+
+#form h1 {
+  margin-bottom: 1.5em;
+  line-height: 50px;
+  border-bottom: 2px solid black;
+}
+
+.options-container {
+  border-radius: 15px;
+  height: 2.5em;
+  display: flex;
+  margin-bottom: 2em;
+  width: 100px;
+  border: none;
+}
+
+.form__select {
+  margin-bottom: 4em;
+  padding: 1em;
+  border-radius: 40px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+#check-btn {
+  cursor: pointer;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  background-color: #000;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .wrapper__draw-container {
+    order: 0;
+  }
+  .draw-container__img::after {
+    content: "";
+    display: inline-block;
+    width: 10em;
+    height: 5em;
+    box-shadow: 0px 100px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    right: 15%;
+    top: 90%;
+  }
+  .form__select {
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    justify-content: space-evenly;
 
-.draw-container__img{
-    /* transform: rotateZ(90deg); */
-    /* border: 1px solid red; */
-    border-radius: 45%;
-    /* border: 1px solid black; */
-}
-
-.draw-container__img img{
-    width: 15rem;
-    position: relative;
-    animation: coinMovement 4s linear 0s infinite;
-    /* box-shadow: 0px 200px 22px rgba(0, 0, 0, 0.2); */
-    border-radius: inherit;
-}
-
-.wrapper__exch-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#form{
-    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    background: rgba(225, 225,225, 0.1);
-    backdrop-filter: blur(20px);
-    background-size: cover;
-    color: #fff;
-    text-align: center;
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-}
-
-@media screen and (min-width: 768px){
-    .wrapper{
-        grid-template-columns: repeat(2, 1fr);
-    } .wrapper__draw-container{
-        order: 0;
-    }
+    width: 100%;
+  }
 }
