@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/style.css" />
     <title>Daily Exchanges</title>
   </head>
@@ -14,14 +20,17 @@
         <form id="form">
           <h1>Check today's exchange rates</h1>
           <div class="form__select">
-            <label for="base">Base:
-            <select name="base" class="options-container">
-              <option value="EUR">EUR</option>
-              <option value="USD">USD</option>
-            </select>
-          </label>
-            <label for="rates">Rate:
-            <select name="rates" id="rates" class="options-container"></select></label>
+            <label for="base"
+              >Base:
+              <select name="base" class="options-container">
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+              </select>
+            </label>
+            <label for="rates"
+              >Rate:
+              <select name="rates" id="rates" class="options-container"></select
+            ></label>
           </div>
           <button id="check-btn">CHECK</button>
         </form>
