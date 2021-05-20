@@ -1,13 +1,20 @@
 let exchangeInfo;
+const $checkBtn = document.querySelector("#check-btn");
 
-fetch("https://api.ratesapi.io/api/latest")
+fetch(
+  "http://api.exchangeratesapi.io/v1/latest?access_key=f626c631b79a9a71a8b82a6e97fe99f4"
+)
   .then((response) => {
     return response.json();
   })
   .then((jsonResponse) => {
+    console.log(jsonResponse);
     const rates = Object.keys(jsonResponse.rates);
-    createRatesOptions(rates)
+    createRatesOptions(rates);
     return (exchangeInfo = jsonResponse);
+  })
+  .catch((error) => {
+    console.error(error);
   });
 
 const createRatesOptions = (rates) => {
@@ -16,8 +23,27 @@ const createRatesOptions = (rates) => {
     const newOption = document.createElement("option");
     newOption.textContent = rate;
     newOption.value = rate;
-    $select.appendChild(newOption)
+    $select.appendChild(newOption);
   });
 };
 
-const handleApiData = (data) => {};
+const handleApiRates = (data, selectedRate) => {
+  const rates = data.rates;
+  selectedRate.toString()
+  const rate = rates[selectedRate]
+  console.log(rate)
+};
+
+const getSelectedRate = () => {
+  const $rates = document.querySelector("#rates");
+  const rateIndex = $rates.selectedIndex;
+  const selectedRate = $rates[rateIndex].value;
+  return selectedRate;
+};
+
+$checkBtn.onclick = (e) => {
+  const selectedRate = getSelectedRate();
+  handleApiRates(exchangeInfo, selectedRate)
+  e.preventDefault();
+
+};
