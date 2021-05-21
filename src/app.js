@@ -1,14 +1,17 @@
 let exchangeInfo;
 const $checkBtn = document.querySelector("#check-btn");
 
+
 fetch(
   "http://api.exchangeratesapi.io/v1/latest?access_key=f626c631b79a9a71a8b82a6e97fe99f4"
 )
+
   .then((response) => {
     return response.json();
   })
   .then((jsonResponse) => {
     const rates = Object.keys(jsonResponse.rates);
+
     createRatesOptions(rates);
     return (exchangeInfo = jsonResponse);
   })
@@ -22,6 +25,7 @@ const createRatesOptions = (rates) => {
     const newOption = document.createElement("option");
     newOption.textContent = rate;
     newOption.value = rate;
+
     $select.appendChild(newOption);
   });
 };
@@ -64,3 +68,4 @@ const displayExchangeInfo = (selectedBase, selectedRate, rateValue) => {
   $rateValue.textContent = rateValue;
   $exchangesContainer.classList.remove("hide");
 };
+
