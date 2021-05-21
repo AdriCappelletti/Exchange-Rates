@@ -22,7 +22,13 @@
           <div class="form__select">
             <label for="base"
               >Base:
-              <select name="base" class="options-container">
+
+              <select
+                name="base"
+                class="options-container"
+                id="bases-container"
+              >
+
                 <option value="EUR">EUR</option>
                 <option value="USD">USD</option>
               </select>
@@ -32,7 +38,16 @@
               <select name="rates" id="rates" class="options-container"></select
             ></label>
           </div>
-          <button id="check-btn">CHECK</button>
+
+          <div id="exchanges-results" class="hide">
+            <p>
+              <span id="base-value">1</span>&nbsp;<span id="base">EUR</span>
+            </p>
+            <span style="color: #ffff">=</span>
+            <p><span id="rate-value">40</span> <span id="rate">ARS</span></p>
+          </div>
+          <button id="check-btn">check</button>
+
         </form>
       </div>
       <div class="wrapper__draw-container container">
