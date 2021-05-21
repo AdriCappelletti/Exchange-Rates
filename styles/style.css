@@ -26,8 +26,8 @@ body {
   );
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Poppins', sans-serif;
- font-family: 'Roboto', sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .wrapper {
@@ -61,7 +61,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:1em;
+  padding: 1em;
   position: relative;
 }
 
@@ -84,8 +84,8 @@ body {
 #form h1 {
   margin-bottom: 1.5em;
   line-height: 50px;
-  border-bottom: 2px solid #E4AF18;
-  letter-spacing: .3px;
+  border-bottom: 2px solid #e4af18;
+  letter-spacing: 0.3px;
 }
 
 .options-container {
@@ -98,7 +98,7 @@ body {
 }
 
 .form__select {
-  margin-bottom: 4em;
+  margin-bottom: 3em;
   padding: 1em;
   border-radius: 40px;
   font-weight: bold;
@@ -110,12 +110,34 @@ body {
   height: 3rem;
   border-radius: 5px;
   border: none;
-  background-color: #E4AF18;
+  background-color: #f4af18;
+  text-transform: uppercase;
+  font-weight: bold;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
 }
 
+#exchanges-results {
+  color: #000;
+  box-shadow: 0px 0px 15px -3px black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  width: 135%;
+  height: 100px;
+  margin-bottom: 4em;
+  background-color: hsla(264, 51%, 38%, 1);
+  border-radius: 10px;
+  color: #f4cf18;
+}
+
+#exchanges-results.hide {
+  display: none;
+}
+
 @media screen and (min-width: 768px) {
-  body{
+  body {
     height: 100vh;
   }
   .wrapper {
@@ -138,7 +160,11 @@ body {
   .form__select {
     display: flex;
     justify-content: space-evenly;
-
     width: 100%;
+  }
+
+  #exchanges-results {
+    width: 119%;
+    padding: 2em;
   }
 }
