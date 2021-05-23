@@ -1,9 +1,11 @@
 let exchangeInfo;
 const $checkBtn = document.querySelector("#check-btn");
 
+
 fetch(
   "https://v6.exchangerate-api.com/v6/e38513aaab8ad9013a8733cc/latest/USD"
 )
+
   .then((response) => {
     return response.json();
   })
@@ -23,6 +25,7 @@ const createRatesOptions = (rates) => {
     const newOption = document.createElement("option");
     newOption.textContent = rate;
     newOption.value = rate;
+
     $select.appendChild(newOption);
   });
 };
@@ -68,3 +71,4 @@ const displayExchangeInfo = (selectedBase, selectedRate, rateValue) => {
 
 
 // http://api.exchangeratesapi.io/v1/latest?access_key=f626c631b79a9a71a8b82a6e97fe99f4
+
