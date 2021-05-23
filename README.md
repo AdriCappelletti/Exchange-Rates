@@ -1,7 +1,7 @@
 
 # Exchange-Rates API
 <p>Hey, nice to see you here!</p><br>
-This website allows you to see real time rates in every rate<br> 
+This website allows you to see real time rates in every rate consuming the https://www.exchangerate-api.com/ API<br> 
 and it was built entirely using HTML, CSS and Vanilla JavaScript.<br>
 To run this project just fork it and clone it into you computer.<br>
 
