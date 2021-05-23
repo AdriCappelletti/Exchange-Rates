@@ -3,16 +3,20 @@ const $checkBtn = document.querySelector("#check-btn");
 
 
 fetch(
-  "http://api.exchangeratesapi.io/v1/latest?access_key=f626c631b79a9a71a8b82a6e97fe99f4"
+
+  "https://v6.exchangerate-api.com/v6/e38513aaab8ad9013a8733cc/latest/USD"
+
 )
 
   .then((response) => {
     return response.json();
   })
   .then((jsonResponse) => {
-    const rates = Object.keys(jsonResponse.rates);
 
+    const rates = Object.keys(jsonResponse.conversion_rates);
     createRatesOptions(rates);
+    console.log(jsonResponse)
+
     return (exchangeInfo = jsonResponse);
   })
   .catch((error) => {
@@ -38,7 +42,7 @@ const getSelectedRate = () => {
 };
 
 const getRateValue = (data, selectedRate) => {
-  const rates = data.rates;
+  const rates = data.conversion_rates;
   selectedRate.toString();
   const rateValue = rates[selectedRate].toFixed(2);
   return rateValue;
@@ -68,4 +72,7 @@ const displayExchangeInfo = (selectedBase, selectedRate, rateValue) => {
   $rateValue.textContent = rateValue;
   $exchangesContainer.classList.remove("hide");
 };
+
+
+// http://api.exchangeratesapi.io/v1/latest?access_key=f626c631b79a9a71a8b82a6e97fe99f4
 
