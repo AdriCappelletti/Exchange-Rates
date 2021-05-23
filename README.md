@@ -1,6 +1,6 @@
 
 # Exchange-Rates
-Hey nice to see you here!<br>
+<h1>Hey nice to see you here!</h1><br>
 This website allows you to see real time rates in every rate<br> 
 and it was built entirely using HTML, CSS and Vanilla JavaScript.<br>
 To run this project just fork it and clone it into you computer.<br>
