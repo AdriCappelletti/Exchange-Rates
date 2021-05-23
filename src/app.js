@@ -3,16 +3,20 @@ const $checkBtn = document.querySelector("#check-btn");
 
 
 fetch(
+
   "https://v6.exchangerate-api.com/v6/e38513aaab8ad9013a8733cc/latest/USD"
+
 )
 
   .then((response) => {
     return response.json();
   })
   .then((jsonResponse) => {
+
     const rates = Object.keys(jsonResponse.conversion_rates);
     createRatesOptions(rates);
     console.log(jsonResponse)
+
     return (exchangeInfo = jsonResponse);
   })
   .catch((error) => {
