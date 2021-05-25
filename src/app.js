@@ -27,6 +27,7 @@ const createRatesOptions = (rates) => {
   rates.forEach((rate) => {
     const $select = document.querySelector("#rates");
     const newOption = document.createElement("option");
+    newOption.className = 'rate'
     newOption.textContent = rate;
     newOption.value = rate;
 
