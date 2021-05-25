@@ -1,0 +1,24 @@
+{
+  "name": "exchange-rates",
+  "version": "1.0.0",
+  "description": "Web app to se daily exchange rates",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress-dev": "cypress open"
+    
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdriCappelletti/Exchange-Rates.git"
+  },
+  "author": "Adriano Cappelletti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdriCappelletti/Exchange-Rates/issues"
+  },
+  "homepage": "https://github.com/AdriCappelletti/Exchange-Rates#readme",
+  "devDependencies": {
+    "cypress": "^7.3.0"
+  }
+}
